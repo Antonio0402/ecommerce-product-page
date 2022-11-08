@@ -1,0 +1,60 @@
+@use '../utilities' as u;
+
+.btn {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sizer-12);
+  padding-block: var(--sizer-14);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 1;
+  
+  @include u.transition-ease(0.2s);
+
+  &--checkout {
+    
+    background-color: hsl(var(--clr-primary));
+    color: hsl(var(--white));
+    box-shadow: 0px 15px 25px hsl(var(--clr-pale));
+    & > * {
+      font-size: var(--fs-16);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+  }
+  
+  &:hover, &:focus {
+    opacity: 0.5;  
+  }
+}
+
+.rounded-btn {
+  
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 2.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  &--slide { 
+    background-color: hsla(var(--white), 0.5);
+    & > svg {
+      stroke: #1D2026;
+      &:hover, &:focus {
+        stroke: hsl(var(--clr-primary));  
+      }
+    }  
+  }
+}
+
+.icon-btn {
+  background-color: transparent;
+  border: none; 
+  cursor: pointer;
+}

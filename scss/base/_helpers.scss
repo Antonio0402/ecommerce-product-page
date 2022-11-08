@@ -1,0 +1,166 @@
+/* ------------------ */
+/* Helpers             */
+/* ------------------ */
+@use '../utilities' as u;
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+
+  &--col {
+    flex-direction: column;  
+  }
+
+  &--jc-ct {
+    justify-content: center;
+  }
+
+  &--ai-ct {
+    align-items: center;
+  }
+
+  &--jc-sb {
+    justify-content: space-between;
+  }
+  
+  &--jc-se {
+    justify-content: space-evenly;  
+  }
+}
+
+.grid {
+  display: grid; 
+  gap: var(--gap, 1rem);
+}
+
+.hide-for-mobile {
+  @include u.for-phone-only {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include u.for-tablet-portrait-up {
+    display: none;
+  }  
+}
+
+.hidden {
+  visibility: hidden;  
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: none;
+}
+
+.bg-primary {
+  background-color: hsl(var(--clr-primary));   
+}
+
+.bg-pale {
+  background-color: hsl(var(--clr-pale));  
+}
+
+.bg-light-grayish-blue {
+  background-color: hsl(var(--light-grayish-blue));  
+}
+.bg-white {
+  background-color: hsl(var(--white));  
+}
+
+.text-primary {
+  color: hsl(var(--clr-primary));  
+}
+.text-v-dark-blue {
+  color: hsl(var(--v-dark-blue));  
+}
+.text-dark-grayish-blue {
+  color: hsl(var(--dark-grayish-blue));  
+}
+.text-lgt-grayish-blue {
+  color: hsl(var(--light-grayish-blue));  
+}
+.text-white {
+  color: hsl(var(--white));  
+}
+.text-black {
+  
+  color: hsla(var(--black-75));  
+}
+
+.letter-spacing-1 {
+  letter-spacing: -0.025em;
+}
+.letter-spacing-1-1 {
+  letter-spacing: -0.005em;
+}
+.letter-spacing-2 {
+  letter-spacing: 0.005em;  
+}
+.letter-spacing-3 {
+  letter-spacing: 0.05em;  
+}
+.letter-spacing-4 {
+  letter-spacing: 0.14em;
+}
+
+.ff-sans {
+  font-family: var(--ff-sans);  
+}
+
+.fs-12 {
+  font-size: var(--fs-12);  
+}
+.fs-14 {
+  font-size: var(--fs-14);  
+}
+.fs-16 {
+  font-size: var(--fs-16);  
+}
+.fs-17 {
+  font-size: var(--fs-17);  
+}
+.fs-28 {
+  font-size: var(--fs-28);  
+}
+.fs-44 {
+  font-size: var(--fs-44);  
+}
+
+.uppercase { text-transform: uppercase; }
+
+.fs-28, .fs-44 {
+  font-weight: 700;
+  line-height: 33px;
+}
+
+.fw-400 {
+  font-weight: 400;  
+}
+
+.fw-700 {
+  font-weight: 700;  
+}
+
+.container {
+  
+  margin-inline: auto;
+  padding-inline: var(--pad-li, var(--sizer-80));
+  padding-block: var(--pad-blk, 0);
+  max-width: 80rem; //1280px
+
+  @include u.for-phone-only {
+    --pad-li: var(--sizer-24);
+  }
+}
+
+

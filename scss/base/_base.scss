@@ -1,0 +1,80 @@
+/* box-sizing */
+html {
+  
+  box-sizing: border-box;
+  font-size: 100%;  
+}
+
+*, *::after, *::before {
+  
+  box-sizing: ineherit;  
+}
+
+/* Reset margin */
+body,
+h1,
+h2, 
+h3, 
+h4, 
+h5,
+p,
+figure,
+picture  {
+  
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up default font-weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;  
+}
+
+/* Set up the body */
+body {
+  min-height: 100vh;
+  background-color: var(--clr-white);
+  color: hsl(var(--v-dark-blue));
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  line-height: 1.25;  
+
+}
+/* Set up list */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0; 
+}
+/* Set up img */
+img,
+picture {
+  max-width: 100%;
+  display: block;  
+}
+
+/* Set up the form */
+input,
+button,
+select,
+textarea {
+  
+  font: inherit;  
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefer-reduced-motion: reduce) {
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }  
+}

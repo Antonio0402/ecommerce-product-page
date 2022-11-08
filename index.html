@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="dist/js/slider.js" type="module"></script>
+  <script src="dist/js/nav.js" type="module"></script>
+  <script src="dist/js/cart.js" type="module"></script>
+  <link rel="stylesheet" href="dist/css/styles.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header class="header container flex flex--jc-sb flex--ai-ct">
+    <div class="header__nav flex flex--ai-ct">
+      <button class="header__menu hide-for-desktop" aria-controls="nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+      </button>
+        <a href="#" class="header__logo">
+          <img src="images/logo.svg" alt="sneakers logo">
+        </a>
+      <nav class="nav">
+        <ul class="header__links flex" data-visible="false">
+          <li class="active"><a class="text-black letter-spacing-1" href="#">Collections</a></li>
+          <li><a class="text-black letter-spacing-1" href="#">Men</a></li>
+          <li><a class="text-black letter-spacing-1" href="#">Women</a></li>
+          <li><a class="text-black letter-spacing-1" href="#">About</a></li>
+          <li><a class="text-black letter-spacing-1" href="#">Contact</a></li>
+        </ul>
+        <div class="overlay"></div>
+      </nav>
+    </div>
+    <div class="header__fn flex flex--ai-ct">
+      <button class="header__cart icon-btn" aria-controls="cart" aria-label="Cart">
+        <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
+        <div class="header__notif bg-primary grid"><span class="text-white"></span></div>
+      </button>
+      <a href="#" class="header__account">
+        <img src="images/image-avatar.png" alt="avatar image">
+      </a>
+      <div class="cart" id="cart" data-visible="false">
+        <div class="cart__container">
+          <p class="cart__header fw-700 letter-spacing-2">Cart</p>
+          <div></div>
+          <p class="cart__empty flex text-dark-grayish-blue leter-spacing-1-1 fw-700">Your cart is empty</p>
+          <div></div>
+        </div>
+    </div>
+    </div>
+  </header>
+  <main>
+    <div class="product container grid">
+      <section class="product__slider">
+        <div class="product__slide">
+          <div class="product__rnd-btn flex flex--jc-sb">
+            <button role="prev" aria-label="previous product image" class="rounded-btn rounded-btn--slide">
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </button>
+            <button role="next" aria-label="next product image" class="rounded-btn rounded-btn--slide">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+          </div>
+          <ul role="product-images" class="product__images flex" style="--gap: 0;">
+            <li class="product__image"><img src="images/image-product-1.jpg" alt="shoes image-product-1" ></li>
+            <li class="product__image"><img src="images/image-product-2.jpg" alt="shoes image-product-2" ></li>
+            <li class="product__image"><img src="images/image-product-3.jpg" alt="shoes image-product-3" ></li>
+            <li class="product__image"><img src="images/image-product-4.jpg" alt="shoes image-product-4" ></li>
+          </ul>
+        </div>
+        <div class="product__thumbnails">
+          <ul role="thumbnails-images" class="thumbnails flex" style="--gap: var(--sizer-28);">
+            <li class="thumbnails__image" aria-selected="true"><img src="images/image-product-1-thumbnail.jpg" alt="shoes image-product-1"></li>
+            <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-2-thumbnail.jpg" alt="shoes image-product-2"></li>
+            <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-3-thumbnail.jpg" alt="shoes image-product-3"></li>
+            <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-4-thumbnail.jpg" alt="shoes image-product-4"></li>
+          </ul>
+        </div>
+      </section>
+      <section class="product__content container flex flex--col" style="--gap: var(--sizer-22); --pad-blk: var(--sizer-24)">
+        <div class="product__description flex flex--col flex--jc-ct">
+          <p class="text-primary uppercase fs-12 fw-700 letter-spacing-4">Sneaker Company</p>
+          <h1 class="text-v-dark-blue fs-28">Fall Limited Edition Sneakers</h1>
+          <p class="text-black letter-spacing-1">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        </div>
+        <div class="product__price flex flex--jc-sb flex--ai-ct">
+          <div class="flex flex--ai-ct">
+            <h2 class="price fs-28 fw-700 letter-spacing-3"> $125.00</h2>
+            <p class="price--discount bg-pale text-primary fs-16 fw-700 letter-spacing-2">50%</p>
+          </div>
+          <p class="price--origin text-dark-grayish-blue fs-17 fw-700 letter-spacing-2"><del>$250.00</del></p>
+        </div>
+        <div class="product__checkout flex flex--col letter-spacing-1" style="--gap: var(--sizer-14);">
+          <div class="bg-light-grayish-blue flex flex--jc-sb flex--ai-ct">
+            <button id="decrease" class="icon-btn flex flex--jc-ct flex--ai-ct" aria-label="Decrease quantity"><svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg></button>
+          <span class="qty fs-17 fw-700" aria-label="Current quantity">0</span>
+          <button id="increase" class="icon-btn flex flex--jc-ct flex--ai-ct" aria-label="Increase quantity"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg></button>
+          </div>
+          <button id="checkout" class="btn btn--checkout"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg><span>Add to card</span></button>
+        </div>
+      </section>
+      <dialog class="product__modal">
+        <div class="modal flex flex--jc-ct flex--ai-ct" style="--gap: 2.5rem">
+          <div class="modal__slide">
+            <button role="close" class="icon-btn flex flex--jc-ct flex--ai-ct"><svg width="19" height="20" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/></svg></button>
+            <button role="prev" aria-label="previous product image" class="rounded-btn rounded-btn--slide">
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </button>
+            <div class="modal__images">
+              <ul role="product-images"  class="product__images flex" style="--gap: 0;">
+                <li class="product__image"><img src="images/image-product-1.jpg" alt="shoes image-product-1" ></li>
+                <li class="product__image"><img src="images/image-product-2.jpg" alt="shoes image-product-2" ></li>
+                <li class="product__image"><img src="images/image-product-3.jpg" alt="shoes image-product-3" ></li>
+                <li class="product__image"><img src="images/image-product-4.jpg" alt="shoes image-product-4" ></li>
+              </ul>
+            </div>
+            <button role="next" aria-label="next product image" class="rounded-btn rounded-btn--slide">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <div  class="product__thumbnails">
+            <ul role="thumbnails-images" class="thumbnails flex" style="--gap: var(--sizer-28);">
+              <li class="thumbnails__image" aria-selected="true"><img src="images/image-product-1-thumbnail.jpg" alt="shoes image-product-1"></li>
+              <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-2-thumbnail.jpg" alt="shoes image-product-2"></li>
+              <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-3-thumbnail.jpg" alt="shoes image-product-3"></li>
+              <li class="thumbnails__image" aria-selected="false"><img src="images/image-product-4-thumbnail.jpg" alt="shoes image-product-4"></li>
+            </ul>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Antonio</a>.
+  </div>
+</body>
+</html>

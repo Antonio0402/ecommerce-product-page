@@ -1,0 +1,75 @@
+@use '../utilities' as u;
+.product {
+  
+  &__modal {
+    display: none;
+    place-items: center;
+    position: fixed;
+    height: 100vh;
+    inset: 0 0 0 0;
+    border: none;
+    background-color: hsla(var(--v-dark-blue), 0.8);
+    .modal {
+      
+      flex-direction: column;
+      
+      .modal__slide {
+        position: relative;
+        width: 30%;  
+        .icon-btn {
+          margin-inline-start: auto;
+          margin-block-end: var(--sizer-22);
+          & > svg {
+            fill: #fff;
+            &:hover, &:focus {
+              fill: hsl(var(--clr-primary));  
+            }
+          }
+        }
+        .rounded-btn--slide {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1000;
+          background-color: hsl(var(--white));
+        }
+        & > *[role="prev"] {
+          left: -2.5%;  
+        }
+        & > *[role="next"] {
+          right: -2.5%;  
+        }
+        .modal__images {
+          overflow: hidden;  
+        }
+      }
+
+  
+      .thumbnails {
+        & > * {
+          position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0 0 0 0;
+                z-index: 1000;
+                border-radius: 0.5rem;
+                background-color: transparent;
+            }
+
+            &:hover, &:focus, &[aria-selected="true"] {
+              outline: none;
+              cursor: pointer;
+              &::after{
+                background-color: hsla(var(--white), 0.5);  
+              }
+            } 
+        }  
+      }
+    }
+      
+    @include u.for-phone-only {
+      display: none; !important;
+    }
+  }  
+}

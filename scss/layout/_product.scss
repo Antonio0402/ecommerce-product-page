@@ -1,0 +1,65 @@
+@use '../utilities' as u;
+.product {
+  -pad-blk: 0; 
+
+  @include u.for-tablet-portrait-up {
+    grid-template-columns: 1fr 1fr;
+    --gap: clamp(1rem,7.5vw,7.5rem);
+    place-items: center;
+    --pad-blk: 8.8rem;
+    --pad-li: 3rem;
+  }
+
+  
+  &__content {
+    
+  }
+
+  &__description {
+    --gap: var(--sizer-14);
+    max-width: 45ch;
+
+    @include u.for-tablet-portrait-up {
+
+      --gap: 1.125rem;
+
+        & > p:last-child {
+        margin-block: var(--sizer-18);  
+      } 
+    }
+
+  }
+
+  &__price {
+    p.price--discount {
+      padding: 0.375em 0.5em;
+      border-radius: 0.5rem;
+    }
+    @include u.for-tablet-portrait-up {
+      flex-direction: column;
+      --gap: 0.5rem;
+      align-items: start;
+    }
+  }
+
+  &__checkout {
+
+    & > *:first-child {
+
+      padding: var(--sizer-14) var(--fs-16);
+      border-radius: 0.5rem;
+    }
+
+    @include u.for-tablet-portrait-up {
+      flex-direction: row;
+
+      & > *:first-child {
+        flex: 1;  
+      }
+
+      & > *:last-child {
+        flex: 2;  
+      }
+    }
+  }
+}
